@@ -1,0 +1,39 @@
+<div class="centered-content">
+  <div class="task-manager-container">
+    <div class="sidebar">
+      <button class="btn btn-primary home-button" routerLink="/">
+        home
+      </button>
+      <h1 class="title has-text-primary">
+        Lists
+      </h1>
+      <div class="list-menu" *ngFor="let list of lists">
+        <a [routerLink]="['/lists', list._id]" routerLinkActive="is-active" class="list-menu-item">
+          <p class="text-white">
+            {{ list?.title}}
+          </p>
+          <span class="pull-right task-delete btn-rounded-corners" (click)="deleteList(list)">X</span>
+        </a>
+      </div>
+      <button class="btn btn-primary btn-rounded-corners" routerLink="/new-list">
+        Add List
+      </button>
+    </div>
+
+    <div class="task-list-container">
+      <h1 class="title has-text-primary">
+        Tasks
+      </h1>
+      <div class="task complete" [class.complete]="task.completed" *ngFor="let task of tasks"
+        (click)="onTaskClick(task)">
+        <p class="white-text">
+          {{task.title}}
+          <span class="pull-right task-delete btn-rounded-corners" (click)="deleteTask(task)">X</span>
+        </p>
+      </div>
+      <button class="btn btn-primary add-button btn-rounded-corners" (click)="addTask()">
+        Add Task
+      </button>
+    </div>
+  </div>
+</div>

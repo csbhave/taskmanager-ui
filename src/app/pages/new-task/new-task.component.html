@@ -1,0 +1,15 @@
+<div class="new-list-container">
+    <div class="list-wrapper">
+      <h1 class="title has-text-primary">
+        create new task
+      </h1>
+      <div class="input-group mb-3">
+        <input type="text" #TaskInput class="form-control" placeholder="Enter Here" aria-label="Recipient's username"
+          aria-describedby="basic-addon2">
+      </div>
+      <button class="btn btn-primary" (click)="onSave(TaskInput.value)">
+        save
+      </button>
+    </div>
+  </div>
+  

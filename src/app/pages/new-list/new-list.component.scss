@@ -1,0 +1,14 @@
+.new-list-container {
+  position: relative;
+
+  .list-wrapper {
+    position: absolute;
+    top: 200px;
+    left: 400px;
+    width: 50%;
+    margin: 0 auto;
+    background: black;
+    padding: 50px;
+    text-align: center;
+  }
+}
